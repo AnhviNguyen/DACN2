@@ -11,7 +11,7 @@ import 'package:koreanhwa_flutter/features/admin/routing.dart';
 
 final goRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
-    initialLocation: '/student-dashboard',
+    initialLocation: '/',
     /*redirect: (context, state) {
       final authStatus = ref.read(authProvider);
       final path = state.uri.path;

@@ -4,6 +4,8 @@ koreanhwa-master/
 plan.md
 koreanhwa-master.zip
 
+.cursor/
+
 # Flutter/Android/iOS common (optional baseline)
 # Uncomment if needed
 # .dart_tool/
