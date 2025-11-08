@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../../../point_system/point_system.dart';
+
 class PointInfoCard extends StatelessWidget {
   const PointInfoCard({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const currentPoints = 450;
+    final level = PointSystem.getStudentLevel(currentPoints);
+    final progress = PointSystem.getProgressToNextLevel(currentPoints);
+
+    final nextLevelDelta = progress.isMaxLevel
+        ? 'MAX'
+        : '${(progress.targetPointsWithinLevel ?? 0) - progress.currentPointsWithinLevel}';
+
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -14,12 +24,31 @@ class PointInfoCard extends StatelessWidget {
         border: Border.all(color: Colors.grey.shade200),
       ),
       child: Row(
-        children: const [
-          Expanded(child: _MiniStat(title: 'Tổng điểm', value: '450')),
-          SizedBox(width: 12),
-          Expanded(child: _MiniStat(title: 'Điểm tuần này', value: '150')),
-          SizedBox(width: 12),
-          Expanded(child: _MiniStat(title: 'Điểm tháng này', value: '600')),
+        children: [
+          Expanded(
+            child: _MiniStat(
+              title: 'Tổng điểm',
+              value: '$currentPoints',
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: _MiniStat(
+              title: 'Cấp độ',
+              value: level.name,
+              subtitle: level.description,
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: _MiniStat(
+              title: 'Tiến độ lên cấp',
+              value: '${progress.progressPercent.toStringAsFixed(0)}%',
+              subtitle: progress.isMaxLevel
+                  ? 'Đã đạt cấp cao nhất'
+                  : 'Còn $nextLevelDelta điểm',
+            ),
+          ),
         ],
       ),
     );
@@ -27,9 +56,14 @@ class PointInfoCard extends StatelessWidget {
 }
 
 class _MiniStat extends StatelessWidget {
-  const _MiniStat({required this.title, required this.value});
+  const _MiniStat({
+    required this.title,
+    required this.value,
+    this.subtitle,
+  });
   final String title;
   final String value;
+  final String? subtitle;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,6 +77,10 @@ class _MiniStat extends StatelessWidget {
         Text(title, style: const TextStyle(color: Colors.black54, fontWeight: FontWeight.w600)),
         const SizedBox(height: 6),
         Text(value, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800, color: Colors.black87)),
+        if (subtitle != null) ...[
+          const SizedBox(height: 6),
+          Text(subtitle!, style: const TextStyle(color: Colors.black54, fontWeight: FontWeight.w500)),
+        ],
       ]),
     );
   }

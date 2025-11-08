@@ -8,10 +8,11 @@ import 'package:koreanhwa_flutter/features/dashboard/presentation/pages/dashboar
 import 'package:koreanhwa_flutter/features/home/presentation/pages/home_page.dart';
 import 'package:koreanhwa_flutter/features/student/routing.dart';
 import 'package:koreanhwa_flutter/features/admin/routing.dart';
+import 'package:koreanhwa_flutter/features/demo/widgets_showcase.dart';
 
 final goRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
-    initialLocation: '/',
+    initialLocation: '/lesson-info',
     /*redirect: (context, state) {
       final authStatus = ref.read(authProvider);
       final path = state.uri.path;
@@ -40,7 +41,15 @@ final goRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/dashboard',
         name: 'dashboard',
-        pageBuilder: (context, state) => const MaterialPage(child: DashboardPage()),
+        pageBuilder:
+            (context, state) => const MaterialPage(child: DashboardPage()),
+      ),
+      GoRoute(
+        path: '/widgets',
+        name: 'widgets',
+        pageBuilder:
+            (context, state) =>
+                const MaterialPage(child: WidgetsShowcasePage()),
       ),
       GoRoute(
         path: '/login',
@@ -50,7 +59,8 @@ final goRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/register',
         name: 'register',
-        pageBuilder: (context, state) => const MaterialPage(child: RegisterPage()),
+        pageBuilder:
+            (context, state) => const MaterialPage(child: RegisterPage()),
       ),
       ...studentRoutes,
       ...adminRoutes,
