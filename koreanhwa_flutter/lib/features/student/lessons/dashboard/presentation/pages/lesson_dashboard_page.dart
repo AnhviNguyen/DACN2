@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../lesson_dashboard_data.dart';
-import '../widgets/lesson_course_detail_list.dart';
-import '../widgets/lesson_course_section.dart';
-import '../widgets/lesson_dashboard_header.dart';
-import '../widgets/lesson_notice_card.dart';
-import '../widgets/lesson_progress_ring.dart';
-import '../widgets/lesson_summary_stats_section.dart';
-import '../widgets/lesson_video_summary_section.dart';
+import '../wigets/lesson_course_detail_list.dart';
+import '../wigets/lesson_dashboard_header.dart';
+import '../wigets/lesson_notice_card.dart';
+import '../wigets/lesson_progress_ring.dart';
+import '../wigets/lesson_video_summary_section.dart';
+import '../wigets/lesson_summary_stats_section.dart';
+import '../wigets/lesson_course_section.dart';
 
 class LessonDashboardPage extends StatelessWidget {
   const LessonDashboardPage({super.key});

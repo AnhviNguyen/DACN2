@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/lesson_info_buy_card.dart';
-import '../widgets/lesson_info_header.dart';
-import '../widgets/lesson_info_stats.dart';
-import '../widgets/lesson_info_tab_section.dart';
+import '../widgets/classroom_header.dart';
+import '../widgets/classroom_tab_bar.dart';
 
-class LessonInfoPage extends StatelessWidget {
-  const LessonInfoPage({super.key});
+class LessonClassroomPage extends StatelessWidget {
+  const LessonClassroomPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +14,7 @@ class LessonInfoPage extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
-        title: const Text('Chi tiết khóa học'),
+        title: const Text('Lớp học'),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -25,12 +23,9 @@ class LessonInfoPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: const [
-              LessonInfoHeader(),
+              ClassroomHeader(),
               SizedBox(height: 16),
-              LessonInfoBuyCard(),
-              SizedBox(height: 16),
-              LessonInfoTabSection(),
-              SizedBox(height: 24),
+              ClassroomTabBar(),
             ],
           ),
         ),

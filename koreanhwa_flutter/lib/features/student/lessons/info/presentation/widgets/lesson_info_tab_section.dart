@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'tabs/content_tab.dart';
+import '../../../shared/widgets/content_tab.dart';
 import 'tabs/gifts_tab.dart';
 import 'tabs/instructor_tab.dart';
 import 'tabs/intro_tab.dart';
