@@ -56,7 +56,7 @@ final ThemeData lightTheme = ThemeData(
       borderSide: BorderSide(color: Colors.grey[300]!),
     ),
     filled: true,
-    fillColor: Colors.grey[900],
+    fillColor: Colors.white,
   ),
   
   // Button themes
