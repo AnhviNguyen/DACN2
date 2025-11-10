@@ -5,6 +5,7 @@ import 'package:koreanhwa_flutter/features/student/lessons/classroom/presentatio
 import 'package:koreanhwa_flutter/features/student/lessons/dashboard/presentation/pages/lesson_dashboard_page.dart';
 import 'package:koreanhwa_flutter/features/student/lessons/info/presentation/pages/lesson_info_page.dart';
 import 'package:koreanhwa_flutter/features/student/lessons/learning/presentation/pages/lesson_learning_page.dart';
+import 'package:koreanhwa_flutter/features/student/roadmap/overview/presentation/pages/my_roadmap_page.dart';
 
 
 final List<RouteBase> studentRoutes = <RouteBase>[
@@ -13,6 +14,12 @@ final List<RouteBase> studentRoutes = <RouteBase>[
     name: 'student-dashboard',
     pageBuilder:
         (context, state) => const MaterialPage(child: StudentDashboardPage()),
+  ),
+  GoRoute(
+    path: '/my-roadmap',
+    name: 'my-roadmap',
+    pageBuilder:
+        (context, state) => const MaterialPage(child: MyRoadmapPage()),
   ),
   GoRoute(
     path: '/lessons',
