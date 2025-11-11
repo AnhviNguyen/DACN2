@@ -6,6 +6,7 @@ import 'package:koreanhwa_flutter/features/student/lessons/dashboard/presentatio
 import 'package:koreanhwa_flutter/features/student/lessons/info/presentation/pages/lesson_info_page.dart';
 import 'package:koreanhwa_flutter/features/student/lessons/learning/presentation/pages/lesson_learning_page.dart';
 import 'package:koreanhwa_flutter/features/student/roadmap/overview/presentation/pages/my_roadmap_page.dart';
+import 'package:koreanhwa_flutter/features/student/topik/test_form/presentation/pages/test_form_page.dart';
 
 
 final List<RouteBase> studentRoutes = <RouteBase>[
@@ -44,5 +45,11 @@ final List<RouteBase> studentRoutes = <RouteBase>[
     name: 'lesson-learning',
     pageBuilder:
         (context, state) => const MaterialPage(child: LessonLearningPage()),
+  ),
+  GoRoute(
+    path: '/test-form',
+    name: 'test-form',
+    pageBuilder:
+        (context, state) => const MaterialPage(child: TestFormPage()),
   ),
 ];

@@ -12,7 +12,7 @@ import 'package:koreanhwa_flutter/features/demo/widgets_showcase.dart';
 
 final goRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
-    initialLocation: '/my-roadmap',
+    initialLocation: '/test-form',
     /*redirect: (context, state) {
       final authStatus = ref.read(authProvider);
       final path = state.uri.path;
